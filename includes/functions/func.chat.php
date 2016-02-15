@@ -1,13 +1,11 @@
 <?php
   function send($message){
     $fileName = '../../chat_files/chat.txt';
-    chmod($fileName, 0777);
     if (!empty($message)) {
       $handle = fopen('../../chat_files/chat.txt', 'a');
       if ($handle) {
         fwrite($handle, $message. ";".time() ."\n");
         fclose($handle);
-        chmod($fileName, 0755);
         return true;
       }else{
         return false;
@@ -27,6 +25,7 @@
         foreach ($message as $value) {
           if (!empty($value)) {
             $values = explode(';', $value);
+            date_default_timezone_set("Asia/Karachi");
             $time = date('h:i:s a', $values[1]);
             echo "Ahmed: ".$values[0]."<span class='time'>".$time."</span><br>";
           }
