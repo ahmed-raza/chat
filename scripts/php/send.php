@@ -5,7 +5,7 @@
     if (send($message)) {
       echo "Sent.";
     }else{
-      echo "Error. Failed to chat file.";
+      echo "Error. Failed to open chat file.";
     }
   }else{
     echo "Empty message field.";

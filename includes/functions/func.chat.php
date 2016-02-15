@@ -1,10 +1,13 @@
 <?php
   function send($message){
+    $fileName = '../../chat_files/chat.txt';
+    chmod($fileName, 0777);
     if (!empty($message)) {
       $handle = fopen('../../chat_files/chat.txt', 'a');
       if ($handle) {
         fwrite($handle, $message. ";".time() ."\n");
         fclose($handle);
+        chmod($fileName, 0755);
         return true;
       }else{
         return false;
