@@ -1,0 +1,11 @@
+.chat-wrapper{
+  height: 500px;
+  width: 500px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 1px dotted black;
+  margin: 10px;
+}
+.time{
+  float: right;
+}
