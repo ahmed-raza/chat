@@ -1,12 +1,20 @@
 $(document).ready(function(){
   $('#chatform').submit(function(){
+    var username = $('#username').val();
     var message = $('#message').val();
     $.ajax({
       url: 'scripts/php/send.php',
-      data: { message: message },
+      dataType: "json",
+      data: { username: username, message: message },
       success: function(data){
-        $('#feedback').text(data);
-        $('#message').val("");
+        if (data.status == 'error') {
+          $('#feedback').text(data.message);
+        };
+        if (data.status == 'success') {
+          $('#feedback').text(data.message);
+          $('#username').attr('disabled', true);
+          $('#message').val("");
+        };
       }
     });
     return false;

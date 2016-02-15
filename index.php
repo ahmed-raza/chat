@@ -9,10 +9,23 @@
 </head>
 <body>
   <div class="chat-wrapper"></div>
-  <form method="POST" id="chatform">
-    <input type="text" id="message">
-    <input type="submit" value="Enter">
-  </form>
+  <fieldset>
+    <form method="POST" id="chatform">
+    <table>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text" id="username"></td>
+      </tr>
+      <tr>
+        <td>Message:</td>
+        <td><input type="text" id="message"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Enter"></td>
+      </tr>
+    </table>
+    </form>
+  </fieldset>
   <div id="feedback"></div>
 </body>
 </html>

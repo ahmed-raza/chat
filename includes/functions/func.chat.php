@@ -1,10 +1,10 @@
 <?php
-  function send($message){
+  function send($username, $message){
     $fileName = '../../chat_files/chat.txt';
-    if (!empty($message)) {
+    if (!empty($username) && !empty($message)) {
       $handle = fopen('../../chat_files/chat.txt', 'a');
       if ($handle) {
-        fwrite($handle, $message. ";".time() ."\n");
+        fwrite($handle, $username." : ".$message. ";".time() ."\n");
         fclose($handle);
         return true;
       }else{
@@ -27,7 +27,7 @@
             $values = explode(';', $value);
             date_default_timezone_set("Asia/Karachi");
             $time = date('h:i:s a', $values[1]);
-            echo "Ahmed: ".$values[0]."<span class='time'>".$time."</span><br>";
+            echo $values[0]."<span class='time'>".$time."</span><br>";
           }
         }
       }else{
