@@ -25,7 +25,7 @@
           if (!empty($value)) {
             $values = explode(';', $value);
             $time = date('h:i:s a', $values[1]);
-            echo gethostname().": ".$values[0]."<span class='time'>".$time."</span><br>";
+            echo "Ahmed: ".$values[0]."<span class='time'>".$time."</span><br>";
           }
         }
       }else{
