@@ -8,8 +8,10 @@
   <script type="text/javascript" src="scripts/js/chat.js"></script>
 </head>
 <body>
-  <div class="chat-wrapper"></div>
   <fieldset>
+    <div class="chat-wrapper"></div>
+    <div id="typing"></div>
+    <hr>
     <form method="POST" id="chatform">
     <table>
       <tr>
