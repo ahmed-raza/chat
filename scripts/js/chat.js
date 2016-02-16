@@ -1,9 +1,24 @@
 $(document).ready(function(){
   $('#message').keyup(function(e){
     if (($(this).val().length == 0) && (e.keyCode == 8 || e.keyCode == 13)) {
-      $("#typing").text('');
+      $.ajax({
+        url: 'scripts/php/typingUpdate.php',
+        data: { username: 'null' },
+        success: function(data){
+          $('#typing').text(data);
+          console.log(data);
+        }
+      });
     }else{
-      $("#typing").text($('#username').val() + ' is typing..');
+      var username = $('#username').val();
+      $.ajax({
+        url: 'scripts/php/typingUpdate.php',
+        data: { username: username },
+        success: function(data){
+          $('#typing').text(data);
+          console.log(data);
+        }
+      });
     }
   });
   $('#chatform').submit(function(){
@@ -30,4 +45,7 @@ $(document).ready(function(){
   $(setInterval(function(){
     $('.chat-wrapper').load('scripts/php/read.php');
   }, 1000));
+  $(setInterval(function(){
+    $('#typing').load('scripts/php/typing.php');
+  }, 1500));
 });
