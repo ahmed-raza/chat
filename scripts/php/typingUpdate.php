@@ -9,6 +9,6 @@
       echo "No";
     }
   }else{
-    echo "A big no";
+    echo "";
   }
 ?>

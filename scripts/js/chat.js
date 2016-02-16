@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('#message').keyup(function(e){
-    if (($(this).val().length == 0) && (e.keyCode == 8 || e.keyCode == 13)) {
+    if (($(this).val().length == 0 || $('#username').val().length == 0) && (e.keyCode == 8 || e.keyCode == 13)) {
       $.ajax({
         url: 'scripts/php/typingUpdate.php',
         data: { username: 'null' },
